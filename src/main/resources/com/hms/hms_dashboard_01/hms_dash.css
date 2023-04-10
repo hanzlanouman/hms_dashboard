@@ -4,7 +4,6 @@
 }
 #dashGreetPane{
     -fx-background-color: #443838;
-    /*-fx-padding: 10 20;*/
 
 }
 .dashButtons {
@@ -19,9 +18,25 @@
 
 .dashButtons:hover {
     -fx-background-color: #338;
+/*    Add a little z-index on hovering*/
+    -fx-translate-y: -2px;
+
+}
+Scene {
+    -fx-background-color: transparent;
+}
+#mainPane{
+    -fx-background-color: transparent;
+    /*-fx-background-radius: 10;*/
+}
+#leftPane{
+    -fx-background-radius: 0 10 10 10;
 }
 .dashButtons:pressed {
     -fx-background-color: #227;
+}
+.dashButtons:selected{
+    -fx-background-color: #338;
 }
 
 #logoutButton {

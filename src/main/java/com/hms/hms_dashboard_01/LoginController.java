@@ -36,7 +36,7 @@ public void login(ActionEvent event) throws IOException {
 
     if(Objects.equals(username1, User) && Objects.equals(password1, Pass)){
         System.out.println(username1);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dash.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hms_dash.fxml"));
         root = loader.load();
         Controller controller = loader.getController();
         controller.greet(username1);
