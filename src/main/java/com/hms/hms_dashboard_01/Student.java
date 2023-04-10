@@ -1,6 +1,8 @@
 package com.hms.hms_dashboard_01;
 
 public class Student {
+    private String studentUsername;
+    private String studentPassword;
     private String name;
     private String rollNo;
     private String year;
@@ -17,6 +19,11 @@ public class Student {
         this.roomType = roomType;
         this.roomPrice = roomPrice;
         this.roomStatus = roomStatus;
+    }
+
+    Student(String studentUsername, String studentPassword) {
+        this.studentUsername = studentUsername;
+        this.studentPassword = studentPassword;
     }
 
     public String getName() {

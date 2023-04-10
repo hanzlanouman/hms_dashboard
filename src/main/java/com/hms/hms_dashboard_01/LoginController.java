@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Objects;
 
 
@@ -19,8 +21,7 @@ public class LoginController {
 
     private String adminUser="admin";
     private String adminPass = "123";
-    private String studentUserName="student";
-    private String studentPassword = "123";
+
     private String cookUser="cook";
     private String cookPass = "123";
     private String securityUser="security";
@@ -50,7 +51,7 @@ public void login(ActionEvent event) throws IOException {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
-    }else if(Objects.equals(username1, studentUserName) && Objects.equals(password1, studentPassword)){
+    }else if(Objects.equals(username1, RegisteredEntities.students.get(0)) && Objects.equals(password1, RegisteredEntities.students.get(0))){
         System.out.println(username1);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hms_dash_student.fxml"));
         root = loader.load();
@@ -91,4 +92,11 @@ public void login(ActionEvent event) throws IOException {
     }
 
 }
-}
+
+
+public void registerForm(ActionEvent event) throws IOException {
+    Parent root = FXMLLoader.load(getClass().getResource("hms_register.fxml"));
+    Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+    stage.setScene(new Scene(root));
+    stage.show();
+}}
