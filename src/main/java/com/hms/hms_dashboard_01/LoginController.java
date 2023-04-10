@@ -51,16 +51,6 @@ public void login(ActionEvent event) throws IOException {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
-    }else if(Objects.equals(username1, RegisteredEntities.students.get(0)) && Objects.equals(password1, RegisteredEntities.students.get(0))){
-        System.out.println(username1);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("hms_dash_student.fxml"));
-        root = loader.load();
-        Controller controller = loader.getController();
-        controller.greet(username1);
-
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
     }else if(Objects.equals(username1, cookUser) && Objects.equals(password1, cookPass)){
         System.out.println(username1);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hms_dash_cook.fxml"));
@@ -81,14 +71,26 @@ public void login(ActionEvent event) throws IOException {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
-    }
+    }else{
+        System.out.println(RegisteredEntities.students.size());
+        for(int i = 0; i<RegisteredEntities.students.size(); i++){
+            if(Objects.equals(username1, RegisteredEntities.students.get(i).getStudentUsername()) && Objects.equals(password1, RegisteredEntities.students.get(i).getStudentPassword())){
+                System.out.println(username1);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("hms_dash_student.fxml"));
+                root = loader.load();
+                Controller controller = loader.getController();
+                controller.greet(username1);
 
-    else{
-        Alert loginAlert = new Alert(Alert.AlertType.ERROR);
-        loginAlert.setTitle("Login Error");
-        loginAlert.setHeaderText("Invalid Username or Password");
-        loginAlert.showAndWait();
-
+                Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } else{
+                Alert loginAlert = new Alert(Alert.AlertType.ERROR);
+                loginAlert.setTitle("Login Error");
+                loginAlert.setHeaderText("Invalid Username or Password");
+                loginAlert.showAndWait();
+            }
+        }
     }
 
 }

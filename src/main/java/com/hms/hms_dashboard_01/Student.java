@@ -81,4 +81,14 @@ public class Student {
     public void setRoomStatus(String roomStatus) {
         this.roomStatus = roomStatus;
     }
+
+
+//    write get methods for username and password
+    public String getStudentUsername() {
+        return studentUsername;
+    }
+
+    public String getStudentPassword() {
+        return studentPassword;
+    }
 }

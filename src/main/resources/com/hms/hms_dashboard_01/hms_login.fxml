@@ -41,7 +41,7 @@
          <font>
             <Font size="15.0" />
          </font></PasswordField>
-      <Button fx:id="registerButton" layoutX="420.0" layoutY="432.0" mnemonicParsing="false" onAction="#registerForm" prefHeight="35.0" prefWidth="102.0" styleClass="dashButtons" text="Regiser">
+      <Button fx:id="registerButton" layoutX="420.0" layoutY="432.0" mnemonicParsing="false" onAction="#registerForm" prefHeight="35.0" prefWidth="102.0" styleClass="dashButtons" text="Register">
          <font>
             <Font name="Verdana" size="18.0" />
          </font>
