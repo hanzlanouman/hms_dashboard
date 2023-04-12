@@ -2,16 +2,18 @@ package com.hms.hms_dashboard_01;
 
 public class Room {
     private int roomNo;
-    private String roomType;
+//    private String roomType;
     private String roomStatus;
     private int roomFee;
     private String roomAssignedTo;
     private String roomLocation;
 
-    public Room(int roomNo, String roomType, String roomStatus, int roomFee, String roomAssignedTo, String roomLocation) {
+    public Room(int roomNo, String roomStatus, int roomFee, String roomAssignedTo, String roomLocation) {
         this.roomNo = roomNo;
-        this.roomType = roomType;
         this.roomStatus = roomStatus;
+        this.roomFee = roomFee;
+        this.roomAssignedTo = roomAssignedTo;
+        this.roomLocation = roomLocation;
     }
 
     public int getRoomNo() {
@@ -22,13 +24,13 @@ public class Room {
         this.roomNo = roomNo;
     }
 
-    public String getRoomType() {
-        return roomType;
-    }
+//    public String getRoomType() {
+//        return roomType;
+//    }
 
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
-    }
+//    public void setRoomType(String roomType) {
+//        this.roomType = roomType;
+//    }
 
     public String getRoomStatus() {
         return roomStatus;

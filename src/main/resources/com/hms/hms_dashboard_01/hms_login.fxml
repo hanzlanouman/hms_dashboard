@@ -33,14 +33,14 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button fx:id="loginButton" layoutX="547.0" layoutY="432.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="102.0" styleClass="dashButtons" text="Login">
-         <font>
-            <Font name="Verdana" size="18.0" />
-         </font></Button>
       <PasswordField fx:id="password" layoutX="420.0" layoutY="367.0" prefHeight="35.0" prefWidth="223.0" promptText="Password" styleClass="text-input">
          <font>
             <Font size="15.0" />
          </font></PasswordField>
+      <Button fx:id="loginButton" layoutX="547.0" layoutY="432.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="102.0" styleClass="dashButtons" text="Login">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font></Button>
       <Button fx:id="registerButton" layoutX="420.0" layoutY="432.0" mnemonicParsing="false" onAction="#registerForm" prefHeight="35.0" prefWidth="102.0" styleClass="dashButtons" text="Register">
          <font>
             <Font name="Verdana" size="18.0" />

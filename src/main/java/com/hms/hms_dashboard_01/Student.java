@@ -2,8 +2,11 @@ package com.hms.hms_dashboard_01;
 
 public class Student {
     private String studentUsername;
+    private int studentId;
+    private String studentEmail;
+    private String studentContact;
     private String studentPassword;
-    private String name;
+    private String studentName;
     private String rollNo;
     private String year;
     private String roomNo;
@@ -11,8 +14,8 @@ public class Student {
     private String roomPrice;
     private String roomStatus;
 
-    public Student(String name, String rollNo, String branch, String year, String roomNo, String roomType, String roomPrice, String roomStatus) {
-        this.name = name;
+    public Student(String studentName, String rollNo, String branch, String year, String roomNo, String roomType, String roomPrice, String roomStatus) {
+        this.studentName = studentName;
         this.rollNo = rollNo;
         this.year = year;
         this.roomNo = roomNo;
@@ -25,13 +28,20 @@ public class Student {
         this.studentUsername = studentUsername;
         this.studentPassword = studentPassword;
     }
-
-    public String getName() {
-        return name;
+    Student(int studentId,String studentName, String studentContact,String studentEmail){
+        this.studentId = studentId;
+        this.studentEmail = studentEmail;
+        this.studentName =studentName;
+        this.studentContact = studentContact;
     }
 
-    public void setName(String name) {
-        this.name = name;
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
     public String getRollNo() {
@@ -90,5 +100,29 @@ public class Student {
 
     public String getStudentPassword() {
         return studentPassword;
+    }
+    public String getStudentEmail() {
+        return studentEmail;
+    }
+    public String getStudentContact() {
+        return studentContact;
+    }
+    public int getStudentId() {
+        return studentId;
+    }
+    public void setStudentUsername(String studentUsername) {
+        this.studentUsername = studentUsername;
+    }
+    public void setStudentPassword(String studentPassword) {
+        this.studentPassword = studentPassword;
+    }
+    public void setStudentEmail(String studentEmail) {
+        this.studentEmail = studentEmail;
+    }
+    public void setStudentContact(String studentContact) {
+        this.studentContact = studentContact;
+    }
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 }

@@ -12,8 +12,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RoomController implements Initializable {
+
     @FXML
-    private TableView<Room> table;
+    private TableView<Room> roomTable;
 
     @FXML
     private TableColumn<Room, String> roomAllocatedTo;
@@ -31,20 +32,22 @@ public class RoomController implements Initializable {
     private TableColumn<Room, String> roomStatus;
 
     ObservableList<Room> roomList = FXCollections.observableArrayList(
-            new Room(1, "Single", "Available", 1000, "None", "1st Floor"),
-            new Room(2, "Single", "Available", 1000, "Ahmed", "1st Floor"),
-            new Room(3, "Single", "Available", 1000, "St2", "1st Floor"),
-            new Room(4, "Double", "Available", 1000, "St8", "1st Floor")
+            new Room(1, "Available", 1000, "None", "1st Floor"),
+            new Room(2, "Available", 1000, "Ahmed", "1st Floor"),
+            new Room(3, "Available", 1000, "St2", "1st Floor"),
+            new Room(4, "Unavailable", 1000, "St8", "1st Floor")
     );
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        roomNo.setCellValueFactory(new PropertyValueFactory<Room, Integer>("roomNo"));
-        roomLocation.setCellValueFactory(new PropertyValueFactory<Room, String>("roomLocation"));
-        roomStatus.setCellValueFactory(new PropertyValueFactory<Room, String>("roomStatus"));
-        roomFee.setCellValueFactory(new PropertyValueFactory<Room, Integer>("roomFee"));
-        roomAllocatedTo.setCellValueFactory(new PropertyValueFactory<Room, String>("studentName"));
-        table.setItems(roomList);
+        roomNo.setCellValueFactory(new PropertyValueFactory<>("roomNo"));
+//        roomType.setCellValueFactory(new PropertyValueFactory<>("roomType"));
+        roomFee.setCellValueFactory(new PropertyValueFactory<>("roomFee"));
+        roomStatus.setCellValueFactory(new PropertyValueFactory<>("roomStatus"));
+        roomAllocatedTo.setCellValueFactory(new PropertyValueFactory<>("roomAssignedTo"));
+        roomLocation.setCellValueFactory(new PropertyValueFactory<>("roomLocation"));
+
+        roomTable.setItems(roomList);
 
 
 
